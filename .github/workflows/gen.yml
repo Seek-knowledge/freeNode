@@ -17,5 +17,7 @@ jobs:
         uses: actions/setup-node@v2  #安装node.js
         with:
           node-version: '14'
+
+      - name:
         run: |
           node ./src/index.js
