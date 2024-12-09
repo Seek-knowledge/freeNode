@@ -24,6 +24,7 @@ async function getGithubusercontent(path) {
 function matchUrl(text) {
     const urlPattern = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#/%?=~_|!:,.;]*[-A-Z0-9+&@#/%=~_|])/ig;
     const urls = text.match(urlPattern);
+    console.log("urls===>",urls);
     return urls || [];
 }
 
@@ -31,6 +32,7 @@ function matchUrl(text) {
 function handleText(text) {
     var reg = new RegExp(/v2rayN订阅链接\W+\S+/ig);
     const result = text.match(reg);
+    console.log("result===>",result);
     return result?.[0] ? matchUrl(result[0]) : '';
 }
 
@@ -39,6 +41,7 @@ async function init() {
     getGithubusercontent("https://raw.githubusercontent.com/mksshare/mksshare.github.io/refs/heads/main/README.md")
         .then(text => {
             const url = handleText(text)?.[0];
+            console.log("url===>",url)
             fs.writeFileSync(path.resolve('./url.txt'), url, 'utf-8')
         })
 }
