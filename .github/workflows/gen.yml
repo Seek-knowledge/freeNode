@@ -1,19 +1,19 @@
-name: gen # yml文件名
+# name: gen # yml文件名
  
-on:
-  schedule:   
-    - cron: '* * * * *'   # 定时运行的时间，国际标准时间，北京时间要+8；5分钟运行一次
+# on:
+#   schedule:   
+#     - cron: '* * * * *'   # 定时运行的时间，国际标准时间，北京时间要+8；5分钟运行一次
  
-jobs:
-  run-gen: # 任务名
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@main  #采用main分支下的
+# jobs:
+#   run-gen: # 任务名
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@main  #采用main分支下的
            
-      - name: Setup Node.js
-        uses: actions/setup-node@v2  #安装node.js
-        with:
-          node-version: '23.3.0'
+#       - name: Setup Node.js
+#         uses: actions/setup-node@v2  #安装node.js
+#         with:
+#           node-version: '23.3.0'
 
-      - name: gen file
-        run: node ./src/index.js
+#       - name: gen file
+#         run: node ./src/index.js
