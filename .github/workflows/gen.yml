@@ -16,8 +16,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v2  #安装node.js
         with:
-          node-version: '14'
+          node-version: '23.3.0'
 
       - name: gen file
-        run: |
-          node ./src/index.js
+        run: node ./src/index.js
